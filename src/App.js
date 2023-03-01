@@ -1,23 +1,20 @@
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
+import { Route, Routes } from 'react-router-dom';
+import Characters from './components/Characters';
+import Creation from './components/Creation';
+import Navbar from './components/Navbar';
 
 function App() {
+  const [characters, setCharacter] = useState([])
+  console.log(characters)
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Navbar />
+      <Routes>
+        <Route exact path='/' element={<Characters characters={characters} />} />
+        <Route exact path='/creation' element={<Creation setCharacter={setCharacter} />} />
+      </Routes>
     </div>
   );
 }

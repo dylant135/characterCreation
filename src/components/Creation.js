@@ -8,10 +8,14 @@ export default function Creation(props) {
         strength: 0
     })
     const [points, setPoints] = useState(100)
-    const speed = useRef(formData.speed)
+    console.log(formData)
+
+    const ref = useRef({
+        speed: formData.speed,
+        strength: formData.strength
+    })
 
 
-    console.log(speed)
     function handleChange(event) {
         setFormData(prevState => {
             return {
@@ -22,23 +26,29 @@ export default function Creation(props) {
     }
 
     function handleStatChange(event) {
+        const stat = event.target.name
+        if(event.target.value > ref.current[stat]) {
+            //decrease
+            const num = event.target.value - ref.current[stat]
+            let checkPoints = points
+            checkPoints -= num
+            if(checkPoints <= -1) {
+                return
+            }
+            setPoints(prevState => prevState -= num)
+            ref.current[stat] = event.target.value
+        } else if(event.target.value < ref.current[stat]) {
+            //increase
+            const num = ref.current[stat] - event.target.value 
+            setPoints(prevState => prevState += num)
+            ref.current[stat] = event.target.value
+        }
         setFormData(prevState => {
             return {
                 ...prevState,
                 [event.target.name]: event.target.value
             }
         })
-        if(event.target.value > speed.current) {
-            //decrease
-            const num = event.target.value - speed.current
-            setPoints(prevState => prevState -= num)
-            speed.current = event.target.value
-        } else if(event.target.value < speed.current) {
-            //increase
-            const num = speed.current - event.target.value 
-            setPoints(prevState => prevState += num)
-            speed.current = event.target.value
-        }
     }
 
     function handleSubmit(event) {
@@ -73,17 +83,29 @@ export default function Creation(props) {
                     onChange={handleChange}
                     value={formData.type}
                 >
-                    <option className="center" value=''>-- Choose --</option>
+                    <option className="center" value=''>-- Choose Type --</option>
                     <option value='fire'>Fire</option>
                     <option value='earth'>Earth</option>
                     <option value='air'>Air</option>
                     <option value='water'>Water</option>
                 </select>
-                <h3>Points: {points}</h3>
+                <h3>Stat Points: {points}</h3>
+                <label htmlFor='speed'>Speed: </label>
                 <input 
                     type='number'
+                    min='0'
+                    max='100'
                     name="speed"
                     value={formData.speed}
+                    onChange={handleStatChange}
+                />
+                <label htmlFor='strength'>Strength: </label>
+                <input 
+                    type='number'
+                    min='0'
+                    max='100'
+                    name="strength"
+                    value={formData.strength}
                     onChange={handleStatChange}
                 />
                 <button>Submit</button>

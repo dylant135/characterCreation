@@ -1,18 +1,22 @@
 import React, { useRef, useState } from "react";
 
-export default function Creation(props) {
+export default function CCreation(props) {
     const [formData, setFormData] = useState({
         title: '',
         type: '',
         speed: 0,
-        strength: 0
+        strength: 0,
+        health: 0,
+        intelligence: 0
     })
     const [points, setPoints] = useState(100)
     console.log(formData)
 
     const ref = useRef({
         speed: formData.speed,
-        strength: formData.strength
+        strength: formData.strength,
+        health: formData.health,
+        intelligence: formData.intelligence
     })
 
 
@@ -63,7 +67,9 @@ export default function Creation(props) {
             title: '',
             type: '',
             speed: 0,
-            strength: 0
+            strength: 0,
+            health: 0,
+            intelligence: 0
         })
     }
 
@@ -106,6 +112,24 @@ export default function Creation(props) {
                     max='100'
                     name="strength"
                     value={formData.strength}
+                    onChange={handleStatChange}
+                />
+                <label htmlFor='health'>Health: </label>
+                <input 
+                    type='number'
+                    min='0'
+                    max='100'
+                    name="health"
+                    value={formData.health}
+                    onChange={handleStatChange}
+                />
+                <label htmlFor='intelligence'>Intelligence: </label>
+                <input 
+                    type='number'
+                    min='0'
+                    max='100'
+                    name="intelligence"
+                    value={formData.intelligence}
                     onChange={handleStatChange}
                 />
                 <button>Submit</button>

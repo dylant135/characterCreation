@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './App.css';
 import { Route, Routes } from 'react-router-dom';
 import Characters from './components/Characters';
-import Creation from './components/Creation';
+import CCreation from './components/CCreation';
 import Navbar from './components/Navbar';
 import Clans from './components/Clans';
 
@@ -14,7 +14,7 @@ function App() {
       <Navbar />
       <Routes>
         <Route exact path='/' element={<Characters characters={characters} />} />
-        <Route exact path='/creation' element={<Creation setCharacter={setCharacter} />} />
+        <Route exact path='/creation' element={<CCreation setCharacter={setCharacter} />} />
         <Route exact path='/clans' element={<Clans characters={characters} />} />
       </Routes>
     </div>

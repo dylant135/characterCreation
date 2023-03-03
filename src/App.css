@@ -11,16 +11,25 @@ h1 {
   padding: 10px;
 }
 
-h2, h3 {
+h2 {
+  text-align: center;
+  margin-top: 65px;
+}
+
+.center, h3, h4 {
   text-align: center;
 }
 
-.center {
-  text-align: center;
+.red {
+  color: crimson;
 }
 
 nav {
+  position: fixed;
+  top: 0;
+  margin-bottom: 150px;
   background-color: #7a99c5;
+  opacity: 0.9;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -39,10 +48,10 @@ nav {
 }
 
 .navContainer {
-  float: right;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-right: 20px;
 }
 
 .navContainer > * {
@@ -70,9 +79,27 @@ form > * {
 button {
   background-color: #7a99c5;
   padding: 5px 0;
+  margin: 15px 0;
 }
 
 button:hover {
   background-color: #455770;
   cursor: pointer;
+}
+
+.character {
+  border: 2px solid red;
+  background-color: #7a99c5;
+  padding: 6px;
+  margin: 8px;
+  width: 175px;
+  height: 225px;
+  font-size: 1.3em;
+}
+
+.characters {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
 }

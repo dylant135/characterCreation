@@ -7,14 +7,20 @@ export default function Characters(props) {
             <Character
                 title={c.title}
                 type={c.type}
+                speed={c.speed}
+                strength={c.strength}
+                health={c.health}
+                intelligence={c.intelligence}
                 key={c.title}
             />
         )
     })
     return (
-        <div className="characters">
-            <h2>Character</h2>
-            {listCharacters}
+        <div>
+            <h2>Characters</h2>
+            <div className="characters">
+                {listCharacters}
+            </div>
         </div>
     )
 }

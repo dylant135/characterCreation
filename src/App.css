@@ -103,3 +103,14 @@ button:hover {
   align-items: center;
   flex-wrap: wrap;
 }
+
+.centerBar {
+  width: 100vw;
+  margin: auto;
+  text-align: center;
+}
+
+.searchBar {
+  padding: 5px;
+  font-size: 1.2em;
+}

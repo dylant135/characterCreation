@@ -3,6 +3,7 @@ import React from "react";
 export default function Character(props) {
     let characterType = props.type
     let characterName = props.title
+    
     return (
         <div className="character">
             <h3 className="red">{characterName[0].toUpperCase() + characterName.slice(1)}</h3>

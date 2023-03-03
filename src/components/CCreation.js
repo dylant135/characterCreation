@@ -83,11 +83,13 @@ export default function CCreation(props) {
                     onChange={handleChange}
                     value={formData.title}
                     name='title'
+                    required
                 />
                 <select
                     name="type"
                     onChange={handleChange}
                     value={formData.type}
+                    required
                 >
                     <option className="center" value=''>-- Choose Type --</option>
                     <option value='fire'>Fire</option>

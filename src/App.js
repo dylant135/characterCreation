@@ -13,7 +13,8 @@ function App() {
     <div className="App">
       <Navbar />
       <Routes>
-        <Route exact path='/' element={<Characters characters={characters} />} />
+        <Route exact path='/' element={<Characters characters={characters} 
+        setCharacter={setCharacter} />} />
         <Route exact path='/creation' element={<CCreation setCharacter={setCharacter} />} />
         <Route exact path='/clans' element={<Clans characters={characters} />} />
       </Routes>

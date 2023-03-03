@@ -20,8 +20,9 @@ h2 {
   text-align: center;
 }
 
-.red {
+.characterName {
   color: crimson;
+  overflow-wrap: break-word;
 }
 
 nav {
@@ -76,24 +77,25 @@ form > * {
   font-size: 1.2em;
 }
 
-button {
+.submitButton {
   background-color: #7a99c5;
   padding: 5px 0;
   margin: 15px 0;
 }
 
-button:hover {
+.submitButton:hover {
   background-color: #455770;
   cursor: pointer;
 }
 
 .character {
+  position: relative;
   border: 2px solid red;
   background-color: #7a99c5;
   padding: 6px;
   margin: 8px;
   width: 175px;
-  height: 225px;
+  height: 275px;
   font-size: 1.3em;
 }
 
@@ -113,4 +115,17 @@ button:hover {
 .searchBar {
   padding: 5px;
   font-size: 1.2em;
+}
+
+.deleteButton {
+  padding: 4px;
+  position: absolute;
+  bottom: 5px;
+  right: 40px;
+  background-color: #e57682;
+}
+
+.deleteButton:hover {
+  background-color: #7e101c;
+  cursor: pointer;
 }

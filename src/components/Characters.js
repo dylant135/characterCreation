@@ -8,6 +8,12 @@ export default function Characters(props) {
         return character.toLowerCase().includes(search.toLowerCase())
     })
 
+
+    function deleteCharacter(title) {
+        const newCharacters = props.characters.filter(c => c.title !== title)
+        props.setCharacter(newCharacters)
+    }
+
     return (
         <div className="centerBar">
             <h2>Characters</h2>
@@ -28,6 +34,7 @@ export default function Characters(props) {
                             strength={c.strength}
                             health={c.health}
                             intelligence={c.intelligence}
+                            deleteCharacter={deleteCharacter}
                             key={c.title}
                         />
                     )

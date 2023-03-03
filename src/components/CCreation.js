@@ -134,7 +134,7 @@ export default function CCreation(props) {
                     value={formData.intelligence}
                     onChange={handleStatChange}
                 />
-                <button>Submit</button>
+                <button className="submitButton">Submit</button>
             </form>
         </div>
     )

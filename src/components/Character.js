@@ -14,7 +14,7 @@ export default function Character(props) {
             <h4>Strength: {props.strength}</h4>
             <h4>Health: {props.health}</h4>
             <h4>Intelligence: {props.intelligence}</h4>
-            <button type="button" className="deleteButton" onClick={() => props.deleteCharacter(props.title)}>Delete Character</button>
+            {props.deleteCharacter && <button type="button" className="deleteButton" onClick={() => props.deleteCharacter(props.title)}>Delete Character</button>}
         </div>
     )
 }

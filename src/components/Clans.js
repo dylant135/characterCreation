@@ -1,13 +1,13 @@
 /* eslint-disable default-case */
 import React, { useEffect, useState } from "react";
+import Modal from "../Modal";
 
 export default function Clans(props) {
     const [fire, setFire] = useState([])
     const [water, setWater] = useState([])
     const [earth, setEarth] = useState([])
     const [air, setAir] = useState([])
-
-    console.log(fire, water, earth, air)
+    const [openModal, setOpenModal] = useState(false)
 
     useEffect(() => {
        const findFire = props.characters.filter(f => f.type === 'fire')
@@ -35,23 +35,31 @@ export default function Clans(props) {
     return (
         <div>
             <h2>Clans</h2>
+            <Modal
+                openModal={openModal}
+                setOpenModal={setOpenModal}
+                fire={fire}
+                water={water}
+                earth={earth}
+                air={air}
+            />
             <div className="clans">
-                <div className="fire">
+                <div className="fire" onClick={() => setOpenModal('fire')}>
                     <h5>Fire Clan</h5>
                     <p>Members: {fire.length}</p>
                 </div>
 
-                <div className="water">
+                <div className="water" onClick={() => setOpenModal('water')}>
                     <h5>Water Clan</h5>
                     <p>Members: {water.length}</p>
                 </div>
 
-                <div className="earth">
+                <div className="earth" onClick={() => setOpenModal('earth')}>
                     <h5>Earth Clan</h5>
                     <p>Members: {earth.length}</p>
                 </div>
 
-                <div className="air">
+                <div className="air" onClick={() => setOpenModal('air')}>
                     <h5>Air Clan</h5>
                     <p>Members: {air.length}</p>
                 </div>

@@ -10,7 +10,6 @@ export default function CCreation(props) {
         intelligence: 0
     })
     const [points, setPoints] = useState(100)
-    console.log(formData)
 
     const ref = useRef({
         speed: formData.speed,

@@ -16,6 +16,10 @@ h2 {
   margin-top: 65px;
 }
 
+h5 {
+  font-size: 1.3em;
+}
+
 .center, h3, h4 {
   text-align: center;
 }
@@ -127,5 +131,53 @@ form > * {
 
 .deleteButton:hover {
   background-color: #7e101c;
+  cursor: pointer;
+}
+
+.clans {
+  width: 300px;
+  margin: auto;
+}
+
+.clans > div {
+  margin: 5px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.fire {
+  border: 2px solid crimson;
+}
+
+.fire:hover {
+  background-color: crimson;
+  cursor: pointer;
+}
+
+.water {
+  border: 2px solid #92a1e9;
+}
+
+.water:hover {
+  background-color: #92a1e9;
+  cursor: pointer;
+}
+
+.earth {
+  border: 2px solid #C19A6B;
+}
+
+.earth:hover {
+  background-color: #C19A6B;
+  cursor: pointer;
+}
+
+.air {
+  border: 2px solid #cfe4f9;
+}
+
+.air:hover {
+  background-color: #cfe4f9;
   cursor: pointer;
 }

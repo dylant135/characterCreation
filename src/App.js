@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './App.css';
 import { Route, Routes } from 'react-router-dom';
 import Characters from './components/Characters';
@@ -7,8 +7,12 @@ import Navbar from './components/Navbar';
 import Clans from './components/Clans';
 
 function App() {
-  const [characters, setCharacter] = useState([])
-  console.log(characters)
+  const [characters, setCharacter] = useState(JSON.parse(localStorage.getItem("characters")) || [])
+
+  useEffect(() => {
+    localStorage.setItem('characters', JSON.stringify(characters))
+  }, [characters])
+
   return (
     <div className="App">
       <Navbar />
